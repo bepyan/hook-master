@@ -1,13 +1,21 @@
 import useTitle from 'hooks/useTitle'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Wrapper } from 'style/atom';
 
 export default () => {
-    const titleUpdater = useTitle("loading");
+    const [title, setTtitle] = useState("loading");
+    const titleUpdater = useTitle(title);
+
+    useEffect(() => {
+        titleUpdater(title)
+    }, [title])
+    
 
     return (
-        <div style={{ textAlign: "center" }}>
+        <Wrapper>
             <p>Check out the title of this website</p>
             <button onClick={() => titleUpdater("done")}> change title </button>
-        </div>
+            <p>{title}</p>
+        </Wrapper>
     )
 }
