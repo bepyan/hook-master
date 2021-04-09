@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Wrapper } from 'style/atom';
 
 export default () => {
-    const [title, setTtitle] = useState("loading");
+    const titleToggle = ["💊loading", "✨done"]
+    const [title, setTtitle] = useState(titleToggle[0]);
     const titleUpdater = useTitle(title);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ export default () => {
     return (
         <Wrapper>
             <p>Check out the title of this website</p>
-            <button onClick={() => titleUpdater("done")}> change title </button>
+            <button onClick={() => setTtitle(title === titleToggle[0] ? titleToggle[1] : titleToggle[0])}> change title </button>
             <p>{title}</p>
         </Wrapper>
     )
