@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
         text-transform: uppercase;
         transition: 0.5s;
-        background-size: 200% auto;
+        background-size: 300% auto;
         color: ${theme.color.font};            
         box-shadow: 0 0 10px #eee;
         border: none;
