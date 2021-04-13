@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     }
     html{
         background-color: ${theme.color.background};
+        user-select: none;
     }
     body{
         box-sizing: border-box;
